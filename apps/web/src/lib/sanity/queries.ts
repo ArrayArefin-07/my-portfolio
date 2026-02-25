@@ -1,0 +1,11 @@
+export const siteSettingsQuery = `*[_type == "siteSettings"][0]`;
+export const navigationQuery = `*[_type == "navigation"][0]{menuItems[enabled == true] | order(order asc)}`;
+export const homePageQuery = `*[_type == "homePage"][0]{..., featuredProjectRefs[]->{title,slug,coverImage,oneLiner,category,techStack,featured,date}}`;
+export const projectsQuery = `*[_type == "project"] | order(featured desc, date desc){_id,title,slug,oneLiner,category,techStack,featured,date,coverImage}`;
+export const projectBySlugQuery = `*[_type == "project" && slug.current == $slug][0]`;
+export const aboutQuery = `*[_type == "aboutPage"][0]`;
+export const servicesQuery = `*[_type == "service"] | order(order asc){_id,title,slug,shortDesc,features,startingFromText}`;
+export const testimonialsQuery = `*[_type == "testimonial"] | order(order asc)`;
+export const contactQuery = `*[_type == "contactPage"][0]`;
+export const blogQuery = `*[_type == "blogPost"] | order(publishedAt desc){_id,title,slug,excerpt,publishedAt,coverImage}`;
+export const blogBySlugQuery = `*[_type == "blogPost" && slug.current == $slug][0]`;
