@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 222 47% 8%;
+  --foreground: 210 40% 98%;
+  --primary: 258 90% 66%;
+  --primary-foreground: 0 0% 100%;
+  --border: 217 33% 22%;
+  --input: 215 27% 18%;
+  --ring: 258 90% 66%;
+}
+
+.light {
+  --background: 0 0% 100%;
+  --foreground: 224 71% 4%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+}
+
+body {
+  @apply bg-background text-foreground min-h-screen;
+  background-image: linear-gradient(to bottom right, rgb(15 23 42 / 0.5), transparent),
+    linear-gradient(to top right, rgb(79 70 229 / 0.2), transparent), theme('backgroundImage.grid');
+  background-size: auto, auto, 24px 24px;
+}
+
+.glass {
+  @apply border border-white/10 bg-white/5 backdrop-blur-xl;
+}
